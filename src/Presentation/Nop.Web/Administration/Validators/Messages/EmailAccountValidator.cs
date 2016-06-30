@@ -17,6 +17,7 @@ namespace Nop.Admin.Validators.Messages
             RuleFor(x => x.DisplayName).NotEmpty();
 
             SetStringPropertiesMaxLength<EmailAccount>(dbContext);
+            RuleFor(x => x.SendTestEmailTo).EmailAddress().WithMessage(localizationService.GetResource("Admin.Common.WrongEmail"));
         }
     }
 }

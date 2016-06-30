@@ -14,6 +14,8 @@ namespace Nop.Admin.Validators.Messages
             RuleFor(x => x.Subject).NotEmpty().WithMessage(localizationService.GetResource("Admin.Promotions.Campaigns.Fields.Subject.Required"));
 
             RuleFor(x => x.Body).NotEmpty().WithMessage(localizationService.GetResource("Admin.Promotions.Campaigns.Fields.Body.Required"));
+
+            RuleFor(x => x.TestEmail).EmailAddress().WithMessage(localizationService.GetResource("Admin.Common.WrongEmail"));
         }
     }
 }
