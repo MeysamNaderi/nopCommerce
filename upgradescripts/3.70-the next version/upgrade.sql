@@ -965,6 +965,12 @@ set @resources='
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Fields.EmailAccount.Standard">
     <Value>Standard</Value>
   </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.CustomHeadTegs">
+    <Value><![CDATA[Custom &#60;head&#62; tag]]></Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.CustomHeadTegs.Hint">
+    <Value><![CDATA[Enter a custom &#60;head&62; tag(s) here. For example, some custom &#60;meta&#62; tag. Or leave empty if ignore this setting.]]></Value>
+  </LocaleResource>
 </Language>
 '
 
@@ -3552,5 +3558,13 @@ GO
  BEGIN
  	INSERT [Setting] ([Name], [Value], [StoreId])
  	VALUES (N'shippingsettings.shiptosameaddress', N'False', 0)
+ END
+ GO
+
+ --new setting
+ IF NOT EXISTS (SELECT 1 FROM [Setting] WHERE [name] = N'seosettings.customheadtegs')
+ BEGIN
+ 	INSERT [Setting] ([Name], [Value], [StoreId])
+ 	VALUES (N'seosettings.customheadtegs', N'', 0)
  END
  GO

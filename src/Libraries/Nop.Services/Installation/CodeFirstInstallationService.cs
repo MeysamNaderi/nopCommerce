@@ -5743,6 +5743,7 @@ namespace Nop.Services.Installation
                         "eucookielawaccept",
                         "page-not-found"
                     },
+                CustomHeadTegs = "",
             });
 
             settingService.SaveSetting(new AdminAreaSettings
