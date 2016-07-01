@@ -12,6 +12,7 @@ namespace Nop.Core.Plugins
         {
             this.SupportedVersions = new List<string>();
             this.LimitedToStores = new List<int>();
+            this.Description = String.Empty;
         }
 
 
@@ -22,6 +23,7 @@ namespace Nop.Core.Plugins
             this.ReferencedAssembly = referencedAssembly;
             this.OriginalAssemblyFile = originalAssemblyFile;
             this.PluginType = pluginType;
+            this.Description = String.Empty;
         }
         /// <summary>
         /// Plugin type
@@ -72,6 +74,11 @@ namespace Nop.Core.Plugins
         /// Gets or sets the author
         /// </summary>
         public virtual string Author { get; set; }
+
+        /// <summary>
+        /// Gets or sets the description
+        /// </summary>
+        public virtual string Description { get; set; }
 
         /// <summary>
         /// Gets or sets the display order

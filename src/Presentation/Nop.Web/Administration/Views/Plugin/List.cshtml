@@ -137,19 +137,26 @@
                                     columns: [
                                         {
                                             field: "Group",
-                                            title: "@T("Admin.Configuration.Plugins.Fields.Group")"
+                                            title: "@T("Admin.Configuration.Plugins.Fields.Group")",
+                                            width: 150
                                         }, {
                                             field: "LogoUrl",
                                             title: "@T("Admin.Configuration.Plugins.Fields.Logo")",
-                                            width: 100,
+                                            width: 200,
                                             template: '<img src="#=LogoUrl#" />',
                                             headerAttributes: { style: "text-align:center" },
                                             attributes: { style: "text-align:center" }
                                         }, {
+                                            field: "Description",
+                                            title: "@T("Admin.Configuration.Plugins.Fields.Description")",
+                                            template: '<b>#:FriendlyName#</b>' +
+                                                '<br />#:Description#',
+                                            attributes: { style: "vertical-align:top;" },
+                                            width: 400
+                                        }, {
                                             field: "FriendlyName",
                                             title: "@T("Admin.Configuration.Plugins.Info")",
-                                            template: '<b>#:FriendlyName#</b>' +
-                                                '<ul class="common-list">' +
+                                            template: '<ul class="common-list">' +
                                                 '<li>@T("Admin.Configuration.Plugins.Fields.Version") #:Version#</li>' +
                                                 '<li>@T("Admin.Configuration.Plugins.Fields.Author") #:Author#</li>' +
                                                 '<li>@T("Admin.Configuration.Plugins.Fields.SystemName") #:SystemName#</li>' +
@@ -165,7 +172,8 @@
                                             title: "@T("Admin.Configuration.Plugins.Fields.Installation")",
                                             template: '# if(Installed) {# <button type="submit" name="uninstall-plugin-link-#=SystemName#" class="btn bg-green uninstall-plugin-link">@T("Admin.Configuration.Plugins.Fields.Uninstall")</button> #} else {#  <button type="submit" name="install-plugin-link-#=SystemName#" class="btn bg-red install-plugin-link">@T("Admin.Configuration.Plugins.Fields.Install")</button> #} #',
                                             headerAttributes: { style: "text-align:center" },
-                                            attributes: { style: "text-align:center" }
+                                            attributes: { style: "text-align:center" },
+                                            width: 150
                                         }
                                     ]
                                 });

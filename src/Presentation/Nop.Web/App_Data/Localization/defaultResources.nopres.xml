@@ -4443,6 +4443,9 @@
   <LocaleResource Name="Admin.Configuration.Plugins.Fields.Configure">
     <Value>Configure</Value>
   </LocaleResource>
+  <LocaleResource Name=" Admin.Configuration.Plugins.Fields.Description">
+    <Value>Description</Value>
+  </LocaleResource>  
   <LocaleResource Name="Admin.Configuration.Plugins.Fields.DisplayOrder">
     <Value>Display order</Value>
   </LocaleResource>
